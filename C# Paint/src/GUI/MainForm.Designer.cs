@@ -53,10 +53,10 @@
             this.ColorBtn = new System.Windows.Forms.ToolStripButton();
             this.BackgroundColorBtn = new System.Windows.Forms.ToolStripButton();
             this.SizeBox = new System.Windows.Forms.ToolStripTextBox();
+            this.SizeBtn = new System.Windows.Forms.ToolStripButton();
+            this.PenSizeBox = new System.Windows.Forms.ToolStripTextBox();
             this.ChangePenSize = new System.Windows.Forms.ToolStripButton();
             this.penColor = new System.Windows.Forms.ToolStripButton();
-            this.PenSizeBox = new System.Windows.Forms.ToolStripTextBox();
-            this.SizeBtn = new System.Windows.Forms.ToolStripButton();
             this.DeleteBtn = new System.Windows.Forms.ToolStripButton();
             this.UndoBtn = new System.Windows.Forms.ToolStripButton();
             this.Help = new System.Windows.Forms.ToolStripButton();
@@ -65,11 +65,14 @@
             this.backGroundColor = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.viewPort = new Draw.DoubleBufferedPanel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.statusBar.SuspendLayout();
             this.speedMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.penBackColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backGroundColor)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainMenu
@@ -285,6 +288,21 @@
             this.SizeBox.Name = "SizeBox";
             this.SizeBox.Size = new System.Drawing.Size(30, 25);
             // 
+            // SizeBtn
+            // 
+            this.SizeBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.SizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("SizeBtn.Image")));
+            this.SizeBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.SizeBtn.Name = "SizeBtn";
+            this.SizeBtn.Size = new System.Drawing.Size(23, 22);
+            this.SizeBtn.Text = "SizeBtn";
+            this.SizeBtn.Click += new System.EventHandler(this.SizeBtn_Click);
+            // 
+            // PenSizeBox
+            // 
+            this.PenSizeBox.Name = "PenSizeBox";
+            this.PenSizeBox.Size = new System.Drawing.Size(30, 25);
+            // 
             // ChangePenSize
             // 
             this.ChangePenSize.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -304,21 +322,6 @@
             this.penColor.Size = new System.Drawing.Size(23, 22);
             this.penColor.Text = "penColor";
             this.penColor.Click += new System.EventHandler(this.penColor_Click);
-            // 
-            // PenSizeBox
-            // 
-            this.PenSizeBox.Name = "PenSizeBox";
-            this.PenSizeBox.Size = new System.Drawing.Size(30, 25);
-            // 
-            // SizeBtn
-            // 
-            this.SizeBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.SizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("SizeBtn.Image")));
-            this.SizeBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.SizeBtn.Name = "SizeBtn";
-            this.SizeBtn.Size = new System.Drawing.Size(23, 22);
-            this.SizeBtn.Text = "SizeBtn";
-            this.SizeBtn.Click += new System.EventHandler(this.SizeBtn_Click);
             // 
             // DeleteBtn
             // 
@@ -368,6 +371,7 @@
             // 
             // viewPort
             // 
+            this.viewPort.ContextMenuStrip = this.contextMenuStrip1;
             this.viewPort.Dock = System.Windows.Forms.DockStyle.Fill;
             this.viewPort.Location = new System.Drawing.Point(0, 49);
             this.viewPort.Name = "viewPort";
@@ -377,6 +381,20 @@
             this.viewPort.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseDown);
             this.viewPort.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseMove);
             this.viewPort.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseUp);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem1});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(93, 26);
+            // 
+            // exitToolStripMenuItem1
+            // 
+            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem1.Text = "Exit";
+            this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
             // 
             // MainForm
             // 
@@ -404,6 +422,7 @@
             this.speedMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.penBackColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.backGroundColor)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -444,5 +463,7 @@
         private System.Windows.Forms.PictureBox backGroundColor;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripButton penColor;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
     }
 }

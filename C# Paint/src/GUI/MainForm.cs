@@ -332,5 +332,10 @@ namespace Draw
                 e.Cancel = true;
             }
         }
+
+        private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
