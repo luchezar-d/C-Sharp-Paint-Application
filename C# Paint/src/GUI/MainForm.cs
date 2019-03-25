@@ -268,30 +268,7 @@ namespace Draw
             dialogProcessor.UnSelectAll();
             viewPort.Invalidate();
         }
-
-        private void importToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog f = new OpenFileDialog();
-            f.Filter = "JPG(*.JPG)|*.jpg";
-
-            if (f.ShowDialog() == DialogResult.OK)
-            {
-                image = Image.FromFile(f.FileName);
-                viewPort.BackgroundImage = image;
-            }
-        }
-
-        private void exportToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog f = new SaveFileDialog();
-            f.Filter = "JPG(*.JPG)|*.jpg";
-
-            if (f.ShowDialog() == DialogResult.OK)
-            {
-                image.Save(f.FileName);
-            }
-        }
-
+        
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             About a = new About();
@@ -336,6 +313,85 @@ namespace Draw
         private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void backgroundToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void elipseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dialogProcessor.AddElipse();
+
+            statusBar.Items[0].Text = "Рисуване на елипса";
+
+            viewPort.Invalidate();
+        }
+
+        private void rectangleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dialogProcessor.AddRandomRectangle();
+
+            statusBar.Items[0].Text = "Последно действие: Рисуване на правоъгълник";
+
+            viewPort.Invalidate();
+        }
+
+        private void triangleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dialogProcessor.AddTriangle();
+
+            statusBar.Items[0].Text = "Рисуване на триъгълник.";
+
+            viewPort.Invalidate();
+        }
+
+        private void importImageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog f = new OpenFileDialog();
+            f.Filter = "JPG(*.JPG)|*.jpg";
+
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                image = Image.FromFile(f.FileName);
+                viewPort.BackgroundImage = image;
+            }
+        }
+
+        private void exportImageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog f = new SaveFileDialog();
+            f.Filter = "JPG(*.JPG)|*.jpg";
+
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                image.Save(f.FileName);
+            }
+        }
+        public Image ResizeImage(Image image, Size newSize)
+        {
+            Image newImage = new Bitmap(newSize.Width, newSize.Height);
+
+            using (Graphics GFX = Graphics.FromImage((Bitmap)newImage))
+            {
+                GFX.DrawImage(image, new Rectangle(Point.Empty, newSize));
+            }
+            return newImage;
+        }
+
+        private void openImageToFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fd = new OpenFileDialog();
+
+            if (fd.ShowDialog() == DialogResult.OK)
+            {
+                Image someImage = Bitmap.FromFile(fd.FileName);
+                image = ResizeImage(someImage, this.Size);
+                someImage.Save("saved.bmp", System.Drawing.Imaging.ImageFormat.Bmp);
+                System.Diagnostics.Process.Start("saved.bmp");
+            }
+            viewPort.Invalidate();
         }
     }
 }
