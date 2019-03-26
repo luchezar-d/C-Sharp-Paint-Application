@@ -64,7 +64,8 @@ namespace Draw
 			rect.FillColor = Color.White;
 
 			ShapeList.Add(rect);
-		}
+            BackList.Add(rect);
+        }
         public void AddElipse()
         {
             Random rnd = new Random();

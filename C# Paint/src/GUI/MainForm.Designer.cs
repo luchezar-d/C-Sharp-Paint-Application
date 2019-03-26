@@ -70,10 +70,10 @@
             this.importImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.openImageToFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.backgroundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewPort = new Draw.DoubleBufferedPanel();
-            this.openImageToFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.statusBar.SuspendLayout();
             this.speedMenu.SuspendLayout();
@@ -365,10 +365,10 @@
             this.addToolStripMenuItem,
             this.importImageToolStripMenuItem,
             this.exportImageToolStripMenuItem,
-            this.exitToolStripMenuItem1,
-            this.openImageToFileToolStripMenuItem});
+            this.openImageToFileToolStripMenuItem,
+            this.exitToolStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 136);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(177, 114);
             // 
             // addToolStripMenuItem
             // 
@@ -377,7 +377,7 @@
             this.rectangleToolStripMenuItem,
             this.triangleToolStripMenuItem});
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.addToolStripMenuItem.Text = "New";
             // 
             // elipseToolStripMenuItem
@@ -404,23 +404,30 @@
             // importImageToolStripMenuItem
             // 
             this.importImageToolStripMenuItem.Name = "importImageToolStripMenuItem";
-            this.importImageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importImageToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.importImageToolStripMenuItem.Text = "Import Image";
             this.importImageToolStripMenuItem.Click += new System.EventHandler(this.importImageToolStripMenuItem_Click);
             // 
             // exportImageToolStripMenuItem
             // 
             this.exportImageToolStripMenuItem.Name = "exportImageToolStripMenuItem";
-            this.exportImageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportImageToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.exportImageToolStripMenuItem.Text = "Export Image";
             this.exportImageToolStripMenuItem.Click += new System.EventHandler(this.exportImageToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem1
             // 
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
             this.exitToolStripMenuItem1.Text = "Exit";
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
+            // 
+            // openImageToFileToolStripMenuItem
+            // 
+            this.openImageToFileToolStripMenuItem.Name = "openImageToFileToolStripMenuItem";
+            this.openImageToFileToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.openImageToFileToolStripMenuItem.Text = "Open Image As File";
+            this.openImageToFileToolStripMenuItem.Click += new System.EventHandler(this.openImageToFileToolStripMenuItem_Click);
             // 
             // contextMenuStrip2
             // 
@@ -448,13 +455,6 @@
             this.viewPort.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseDown);
             this.viewPort.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseMove);
             this.viewPort.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ViewPortMouseUp);
-            // 
-            // openImageToFileToolStripMenuItem
-            // 
-            this.openImageToFileToolStripMenuItem.Name = "openImageToFileToolStripMenuItem";
-            this.openImageToFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.openImageToFileToolStripMenuItem.Text = "Open Image To File";
-            this.openImageToFileToolStripMenuItem.Click += new System.EventHandler(this.openImageToFileToolStripMenuItem_Click);
             // 
             // MainForm
             // 
