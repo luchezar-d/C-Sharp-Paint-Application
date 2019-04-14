@@ -78,6 +78,18 @@ namespace Draw
             ShapeList.Add(rect);
             BackList.Add(rect);
         }
+        public void AddRectMercedes()
+        {
+            Random rnd = new Random();
+            int x = rnd.Next(100, 1000);
+            int y = rnd.Next(100, 600);
+
+            RectMercedes rect = new RectMercedes(new Rectangle(x, y, 200, 100));
+            rect.FillColor = Color.White;
+
+            ShapeList.Add(rect);
+            BackList.Add(rect);
+        }
         public void AddOval()
         {
             Random rnd = new Random();

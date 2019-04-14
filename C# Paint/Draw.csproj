@@ -79,6 +79,7 @@
     <Compile Include="src\Model\ElipseShape.cs" />
     <Compile Include="src\Model\GroupShape.cs" />
     <Compile Include="src\Model\RectangleShape.cs" />
+    <Compile Include="src\Model\RectMercedes.cs" />
     <Compile Include="src\Model\Shape.cs" />
     <Compile Include="src\Model\TriangleShape.cs" />
     <Compile Include="src\Processors\DialogProcessor.cs" />

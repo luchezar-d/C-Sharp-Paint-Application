@@ -393,5 +393,14 @@ namespace Draw
             }
             viewPort.Invalidate();
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            dialogProcessor.AddRectMercedes();
+
+            statusBar.Items[0].Text = "Рисуване на триъгълник.";
+
+            viewPort.Invalidate();
+        }
     }
 }
